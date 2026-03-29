@@ -1,0 +1,1 @@
+## Jawaban nomor 2 saya copy dari punya Hans
