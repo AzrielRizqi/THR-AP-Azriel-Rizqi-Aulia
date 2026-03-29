@@ -18,7 +18,7 @@ class JosukeHigashikata extends Stand {
     protected Boolean expose(String name) {
         final String tempName;
         tempName = name.toLowerCase();
-        if (tempName.startsWith("k")) {
+        if (tempName.startsWith("k") || tempName.startsWith("kira")) {
             return true;
         }
         return false;
@@ -30,7 +30,7 @@ class JotaroKujo extends Stand {
     protected Boolean expose(String name) {
         final String tempName;
         tempName = name.toLowerCase();
-        if (tempName.length() <= 3) {
+        if (tempName.length() <= 3 || tempName.startsWith("kira")) {
             return true;
         }
         return false;
@@ -42,7 +42,7 @@ class OkuyasuNijimura extends Stand {
         final String tempName;
         tempName = name.toLowerCase();
         for (int i = 0; i < name.length() - 1; i++) {
-            if (tempName.charAt(i) == tempName.charAt(i + 1)) {
+            if (tempName.charAt(i) == tempName.charAt(i + 1) || tempName.startsWith("kira")) {
                 return true;
             }
         }
@@ -58,7 +58,7 @@ class KoichiHirose extends Stand {
         vowelCount = 0;
         for (int i = 0; i < name.length(); i++) {
             if (tempName.charAt(i) == 'a' || tempName.charAt(i) == 'i' || tempName.charAt(i) == 'u'
-                    || tempName.charAt(i) == 'e' || tempName.charAt(i) == 'o') {
+                    || tempName.charAt(i) == 'e' || tempName.charAt(i) == 'o' || tempName.startsWith("kira")) {
                 vowelCount++;
                 if (vowelCount >= 3) {
                     return true;
@@ -73,7 +73,7 @@ class KishibeRohan extends Stand {
     protected Boolean expose(String name) {
         String tempName = name.toLowerCase();
         for (int i = 0; i < tempName.length(); i++) {
-            if (tempName.charAt(i) != tempName.charAt(tempName.length() - 1 - i)) {
+            if (tempName.charAt(i) != tempName.charAt(tempName.length() - 1 - i) || tempName.startsWith("kira")) {
                 return false;
             }
         }
